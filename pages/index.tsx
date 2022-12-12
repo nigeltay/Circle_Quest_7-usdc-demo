@@ -37,27 +37,21 @@ export default function Home() {
     const signer = provider.getSigner();
 
     // Create a contract object
-    const usdcContract = new ethers.Contract(
-      originalUsdcContract,
-      usdcAbi,
-      signer
-    );
+    // (fill in code here)
 
-    // Use the approve function to send USDC to the contract
-    const balance = await usdcContract.balanceOf(address);
-    setUSDCBalance(balance / 1000000);
+    // Use the balanceOf function to get wallet USDC balance
+    // (fill in code here)
+
+    //set variable value
+    // (fill in code here)
   };
 
-  /**
-   * Check if the user wallet is connected
-   */
+  //Check if the user wallet is connected
   const checkIfWalletIsConnected = async () => {
     try {
       const { ethereum } = window;
 
-      /*
-       * Check if we're authorized to access the user's wallet
-       */
+      //Check if we're authorized to access the user's wallet
       const accounts = await ethereum.request({ method: "eth_accounts" });
 
       // Validate that we have an account
@@ -67,6 +61,7 @@ export default function Home() {
         // Set the current account
         setCurrentAccount(account);
 
+        //call get balance function
         await getBalance(accounts[0]);
 
         // Display a success message to the user that they are connected
@@ -79,6 +74,7 @@ export default function Home() {
     }
   };
 
+  //connect your Metamask wallet on connect button click
   const connectWallet = async () => {
     try {
       const { ethereum } = window;
@@ -89,15 +85,14 @@ export default function Home() {
         return;
       }
 
-      // Request account access if needed
-      const accounts = await ethereum.request({
-        method: "eth_requestAccounts",
-      });
+      // Get user Metamask Ethereum wallet address
+      // (fill in code here)
 
-      // Get the first account we get back
-      setCurrentAccount(accounts[0]);
+      // Get the first account address and assign to varible
+      // (fill in code here)
 
-      await getBalance(accounts[0]);
+      //get wallet balance - call getBalance() function
+      // (fill in code here)
     } catch (error) {
       console.log(error);
     }
@@ -112,7 +107,7 @@ export default function Home() {
         const provider = new ethers.providers.Web3Provider(ethereum);
         const signer = provider.getSigner();
 
-        // Create a contract instance
+        // Create a contract instance of your deployed UsdcDemo contract
         const fundContract = new ethers.Contract(
           usdcDemoContract,
           contractABI,
@@ -122,23 +117,17 @@ export default function Home() {
         console.log("Connected to contract");
         console.log("amount: ", amount);
 
-        // Send the transaction
-        const Txn = await fundContract.Fund(amount, receiverAddress, {
-          gasLimit: 300000,
-        });
-
-        console.log("Mining...", Txn.hash);
+        // Send the transaction, call the Fund function in the contract
+        // (fill in code here)
 
         // Set the sending state to true
         setSending(true);
 
         // Wait for the transaction to be mined
-        await Txn.wait();
+        // (fill in code here)
 
         // Set the sending state to false
         setSending(false);
-
-        console.log("Mined -- ", Txn.hash);
 
         //update USDC balance
         await getBalance(currentAccount);
@@ -171,16 +160,13 @@ export default function Home() {
         );
 
         // Use the approve function to send USDC to the contract
-        const usdcTxn = await usdcContract.approve(
-          usdcDemoContract,
-          ethers.utils.parseUnits("1000", 6)
-        );
+        // (fill in code here)
 
         // Set the approving state to true
         setApproving(true);
 
         // Wait for the transaction to be mined
-        await usdcTxn.wait();
+        // (fill in code here)
 
         // Set the approving state to false
         setApproving(false);
