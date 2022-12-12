@@ -15,6 +15,56 @@ a {
   box-sizing: border-box;
 }
 
+.connectWallet {
+
+  background: blue;
+  padding: 15px;
+  text-align: center;
+  display: block;
+  margin: auto;
+  width: 250px;
+  cursor: pointer;
+  color: white;
+}
+
+.connectWallet:hover {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+.approveBtn {
+
+  background: orange;
+  padding: 15px;
+  text-align: center;
+  display: block;
+  margin: auto;
+  width: 250px;
+  cursor: pointer;
+}
+
+.approveBtn:hover {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+.sendUsdcBtn {
+
+  background: rgb(26, 212, 26);
+  padding: 15px;
+  text-align: center;
+  display: block;
+  margin: auto;
+  width: 400px;
+  cursor: pointer;
+}
+
+.sendUsdcBtn:hover {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
