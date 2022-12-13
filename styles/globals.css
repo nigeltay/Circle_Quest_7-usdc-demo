@@ -40,7 +40,6 @@ a {
   display: block;
   margin: auto;
   width: 250px;
-  cursor: pointer;
 }
 
 .approveBtn:hover {
@@ -56,7 +55,6 @@ a {
   display: block;
   margin: auto;
   width: 400px;
-  cursor: pointer;
 }
 
 .sendUsdcBtn:hover {

@@ -282,6 +282,10 @@ export default function Home() {
                     onClick={Fund}
                     className="sendUsdcBtn"
                     disabled={sending === true}
+                    style={{
+                      color: sending === true ? "black" : "white",
+                      cursor: sending === true ? "progress" : "pointer",
+                    }}
                   >
                     {sending ? "Sending, Please wait..." : "Send USDC now"}
                   </button>
@@ -292,6 +296,10 @@ export default function Home() {
                   className="approveBtn"
                   onClick={Approve}
                   disabled={approving === true}
+                  style={{
+                    color: approving === true ? "black" : "white",
+                    cursor: approving === true ? "progress" : "pointer",
+                  }}
                 >
                   {approving
                     ? `Approving, Please wait...`
