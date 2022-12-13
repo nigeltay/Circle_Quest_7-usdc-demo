@@ -88,7 +88,7 @@ export default function Home() {
       // Get user Metamask Ethereum wallet address
       // (fill in code here)
 
-      // Get the first account address and assign to varible
+      // Get the first account address and assign to variable
       // (fill in code here)
 
       //get wallet balance - call getBalance() function
@@ -191,6 +191,11 @@ export default function Home() {
       style={{
         backgroundColor: "white",
         height: "100vh",
+        marginLeft: "450px",
+        marginRight: "450px",
+        borderStyle: "solid",
+        borderColor: "grey",
+        minWidth: "500px",
       }}
     >
       <Head>
